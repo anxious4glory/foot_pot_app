@@ -8,11 +8,11 @@ const port = "3000";
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html'); 
 
-
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(__dirname + '/public'));
 
 app.get("/", (req, res) => {
-    res.sendFile((__dirname, 'index.html'));
+    res.sendFile('index.html', { root: __dirname });
 });
 
 
