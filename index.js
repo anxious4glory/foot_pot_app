@@ -3,6 +3,7 @@ const path = require('path');
 
 const app = express();
 const port = "3000";
+const server = process.env.PORT;
 
 // set template engine
 app.set('views', path.join(__dirname, 'views'));
@@ -16,6 +17,6 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(port, () => {
+app.listen(server || port, () => {
     console.log('listening On Port 3000');
 });
